@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.order.mapper.ScmPoItemMapper">
+
+    <resultMap type="cn.stylefeng.guns.modular.order.entity.ScmPoItem" id="ScmPoItemMap">
+        <result property="poItemId" column="po_item_id" jdbcType="VARCHAR"/>
+        <result property="itemNo" column="item_no" jdbcType="VARCHAR"/>
+        <result property="projectCategory" column="project_category" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        po_item_id AS "poItemId", item_no AS "itemNo", project_category AS "projectCategory"
+    </sql>
+
+    <select id="selectOrder" resultType="map">
+        select
+        <include refid="Base_Column_List"/>
+        from scm_po_item
+        <if test="poItemId != null">
+            where  po_item_id = #{poItemId}
+        </if>
+    </select>
+
+
+</mapper>

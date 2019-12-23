@@ -1,0 +1,29 @@
+@layout("/common/_container.html",{js:["/assets/modular/order/manager.js"]}){
+
+<div class="layui-body-header">
+    <span class="layui-body-header-title">订单查询</span>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm12 layui-col-md12 layui-col-lg12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form toolbar">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <input id="roleName" class="layui-input" type="text" placeholder="订单号"/>
+                            </div>
+                            <div class="layui-inline">
+                                <button id="btnSearch" class="layui-btn icon-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="layui-table" id="orderTable" lay-filter="orderTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@}
